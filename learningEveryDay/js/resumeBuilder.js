@@ -1,3 +1,5 @@
+
+// biography section
 var bio = {
     "name" : "Marty McFly",
     "role": "Time Traveler",
@@ -15,6 +17,7 @@ var bio = {
     "bioPic": "images/fry.jpg"
 };
 
+// pinning the biography information
 var name = bio.name;
 var formattedName = HTMLheaderName.replace("%data%", name);
 
@@ -188,4 +191,43 @@ work.display = function() {
 };
 
 work.display();
+
+var projects = {
+    "project": [
+        {
+            "title": "Neighborhood Map",
+            "dates": "February 2016 - present",
+            "description": "Neighborhood map project"
+        },
+        {
+            "title": "Arcade Game",
+            "dates": "January 2016 - present",
+            "description": "Arcade game project"
+        }
+    ]
+};
+
+// appending projects information
+projects.display = function () {
+    var p1;
+    for (p1 in projects.project) {
+        $("#projects").append(HTMLprojectStart);
+
+        var title1 = HTMLprojectTitle.replace("%data%", projects.project[p1].title);
+        var dates1 = HTMLprojectDates.replace("%data%", projects.project[p1].dates);
+        var description1 = HTMLprojectDescription.replace("%data%", projects.project[p1].description);
+        $(".project-entry:last").append(title1);
+        $(".project-entry:last").append(dates1);
+        $(".project-entry:last").append(description1);
+
+        // append project images
+        for (ix in projects.project[p1].images) {
+            var image1 = HTMLprojectImage.replace("%data%", projects.project[p1].images[ix]);
+            $(".project-entry:last").append(image1);
+        }
+
+    }
+};
+
+projects.display();
 
