@@ -8,7 +8,7 @@ var bio = {
         "twitter": "@McFly",
         "location": "Hill Valley, California"
     },
-    "welcomeMessage": "Just tryin' to go home.",
+    "welcomeMessage": "Just trying to go home.",
     "skills": [
         " skateboarding", " electric guitar", " sleep ", " saving the universe"
     ],
@@ -64,7 +64,7 @@ var education = {
         {
             "name": "University of California Berkeley Extension",
             "location": "San Francisco, CA",
-            "degree": " ",
+            "degree": "Certification",
             "dates": "2007-2008",
             "major": ["Copyediting"],
             "url": "http://www.http://extension.berkeley.edu/"
@@ -98,22 +98,22 @@ var education = {
 
 // appending education information
 education.display = function () {
-    var e1, o1;
+    var expensiveUniversity, bestValueLearning;
 
     // iterate the schools
-    for (e1 in education.schools) {
+    for (expensiveUniversity in education.schools) {
         $("#education").append(HTMLschoolStart);
 
-        var name1 = HTMLschoolName.replace("%data%", education.schools[e1].name);
-        var nameFinal = name1.replace("#", education.schools[e1].url);
-        var degree1 = HTMLschoolDegree.replace("%data%", education.schools[e1].degree);
-        var dates1 = HTMLschoolDates.replace("%data%", education.schools[e1].dates);
-        var location1 = HTMLschoolLocation.replace("%data%", education.schools[e1].location);
+        var name1 = HTMLschoolName.replace("%data%", education.schools[expensiveUniversity].name);
+        var nameFinal = name1.replace("#", education.schools[expensiveUniversity].url);
+        var degree1 = HTMLschoolDegree.replace("%data%", education.schools[expensiveUniversity].degree);
+        var dates1 = HTMLschoolDates.replace("%data%", education.schools[expensiveUniversity].dates);
+        var location1 = HTMLschoolLocation.replace("%data%", education.schools[expensiveUniversity].location);
 
         $(".education-entry:last").append(nameFinal + degree1);
         $(".education-entry:last").append(dates1);
 
-        var majors = education.schools[e1].major;
+        var majors = education.schools[expensiveUniversity].major;
         for (ix in majors) {
             var major1 = HTMLschoolMajor.replace("%data%", majors[ix]);
             $(".education-entry:last").append(major1);
@@ -124,15 +124,15 @@ education.display = function () {
     // begin online courses
     $("#education").append(HTMLonlineClasses);
 
-    for (o1 in education.onlineCourses) {
+    for (bestValueLearning in education.onlineCourses) {
         $("#education").append(HTMLschoolStart);
 
-        var title1 = HTMLonlineTitle.replace("%data%", education.onlineCourses[o1].title);
-        var titleFinal = title1.replace("#", education.onlineCourses[o1].url);
-        var school1 = HTMLonlineSchool.replace("%data%", education.onlineCourses[o1].school);
-        var dates1 = HTMLonlineDates.replace("%data%", education.onlineCourses[o1].dates);
-        var url1 = HTMLonlineURL.replace("%data%", education.onlineCourses[o1].url);
-        var urlFinal = url1.replace("#", education.onlineCourses[o1].url);
+        var title1 = HTMLonlineTitle.replace("%data%", education.onlineCourses[bestValueLearning].title);
+        var titleFinal = title1.replace("#", education.onlineCourses[bestValueLearning].url);
+        var school1 = HTMLonlineSchool.replace("%data%", education.onlineCourses[bestValueLearning].school);
+        var dates1 = HTMLonlineDates.replace("%data%", education.onlineCourses[bestValueLearning].dates);
+        var url1 = HTMLonlineURL.replace("%data%", education.onlineCourses[bestValueLearning].url);
+        var urlFinal = url1.replace("#", education.onlineCourses[bestValueLearning].url);
 
         $(".education-entry:last").append(titleFinal + school1);
         $(".education-entry:last").append(dates1);
@@ -158,21 +158,28 @@ var work = {
             "title": "Junior Analyst",
             "location": "Menlo Park, CA",
             "dates": "June 2010 - April 2013",
-            "description": "Keep calm, read, and analyze."
+            "description": "Keep calm, read, analyze, and summarize."
+        },
+        {
+            "employer": "MSGR",
+            "title": "Legal Researcher",
+            "location": "Palo Alto, CA",
+            "dates": "June 2008 - April 2010",
+            "description": "Keep calm, read, analyze, and summarize."
         }
     ]
 };
 
 // appending work information
 work.display = function() {
-    var x1;
-    for (x1 in work.jobs) {
+    var jediMaster;
+    for (jediMaster in work.jobs) {
         $("#workExperience").append(HTMLworkStart);
-        var employer1 = HTMLworkEmployer.replace("%data%", work.jobs[x1].employer);
-        var title1 = HTMLworkTitle.replace("%data%", work.jobs[x1].title);
-        var location1 = HTMLworkLocation.replace("%data%", work.jobs[x1].location);
-        var dates1 = HTMLworkDates.replace("%data%", work.jobs[x1].dates);
-        var description1 = HTMLworkDescription.replace("%data%", work.jobs[x1].description);
+        var employer1 = HTMLworkEmployer.replace("%data%", work.jobs[jediMaster].employer);
+        var title1 = HTMLworkTitle.replace("%data%", work.jobs[jediMaster].title);
+        var location1 = HTMLworkLocation.replace("%data%", work.jobs[jediMaster].location);
+        var dates1 = HTMLworkDates.replace("%data%", work.jobs[jediMaster].dates);
+        var description1 = HTMLworkDescription.replace("%data%", work.jobs[jediMaster].description);
         $(".work-entry:last").append(employer1 + title1);
         $(".work-entry:last").append(location1);
         $(".work-entry:last").append(dates1);
