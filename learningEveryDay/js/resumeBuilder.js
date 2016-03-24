@@ -203,26 +203,31 @@ var projects = {
             "title": "Arcade Game",
             "dates": "January 2016 - present",
             "description": "Arcade game project"
+        },
+        {
+            "title": "FIFA Matches",
+            "dates": "January 2016 - present",
+            "description": "Analyzes FIFA Matches"
         }
     ]
 };
 
 // appending projects information
 projects.display = function () {
-    var p1;
-    for (p1 in projects.project) {
+    var projectsForJordans;
+    for (projectsForJordans in projects.project) {
         $("#projects").append(HTMLprojectStart);
 
-        var title1 = HTMLprojectTitle.replace("%data%", projects.project[p1].title);
-        var dates1 = HTMLprojectDates.replace("%data%", projects.project[p1].dates);
-        var description1 = HTMLprojectDescription.replace("%data%", projects.project[p1].description);
+        var title1 = HTMLprojectTitle.replace("%data%", projects.project[projectsForJordans].title);
+        var dates1 = HTMLprojectDates.replace("%data%", projects.project[projectsForJordans].dates);
+        var description1 = HTMLprojectDescription.replace("%data%", projects.project[projectsForJordans].description);
         $(".project-entry:last").append(title1);
         $(".project-entry:last").append(dates1);
         $(".project-entry:last").append(description1);
 
         // append project images
-        for (ix in projects.project[p1].images) {
-            var image1 = HTMLprojectImage.replace("%data%", projects.project[p1].images[ix]);
+        for (Chicago in projects.project[projectsForJordans].images) {
+            var image1 = HTMLprojectImage.replace("%data%", projects.project[projectsForJordans].images[Chicago]);
             $(".project-entry:last").append(image1);
         }
 
