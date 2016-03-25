@@ -17,48 +17,90 @@ var bio = {
     "bioPic": "images/fry.jpg"
 };
 
-// pinning the biography information
+
+// bio variable
 var name = bio.name;
-var formattedName = HTMLheaderName.replace("%data%", name);
-
 var role = bio.role;
-var formattedRole = HTMLheaderRole.replace("%data%", role);
+var bioPic = bio.bioPic;
+var welcomeMessage = bio.welcomeMessage;
 
+// special skills variable
+var skills = bio.skills;
+
+// top contacts variable
+var mobile = bio.contacts.mobile;
+var email = bio.contacts.email;
+var github = bio.contacts.github;
+var twitter = bio.contacts.twitter;
+var _location = bio.contacts.location;
+
+
+
+
+// bio variable
+var formattedName = HTMLheaderName.replace("%data%", name);
+var formattedRole = HTMLheaderRole.replace("%data%", role);
+var formattedBioPic = HTMLbioPic.replace("%data%", bioPic);
+var formattedWelcomeMessage = HTMLWelcomeMsg.replace("%data%", welcomeMessage);
+
+// special skills variable
+var formattedSkills = HTMLskills.replace("%data%", skills);
+
+// top contacts variable
+var formattedMobile = HTMLmobile.replace("%data%", mobile);
+var formattedEmail = HTMLemail.replace("%data%", email);
+var formattedGithub = HTMLgithub.replace("%data%", github);
+var formattedTwitter = HTMLtwitter.replace("%data%", twitter);
+var formattedLocation = HTMLlocation.replace("%data%", _location);
+
+
+
+
+// bio variable
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
-
-var mobile = bio.contacts.mobile;
-var formattedMobile = HTMLmobile.replace("%data%", mobile);
-$("#topContacts").append(formattedMobile);
-
-var email = bio.contacts.email;
-var formattedEmail = HTMLemail.replace("%data%", email);
-$("#topContacts").append(formattedEmail);
-
-var github = bio.contacts.github;
-var formattedGithub = HTMLgithub.replace("%data%", github);
-$("#topContacts").append(formattedGithub);
-
-var twitter = bio.contacts.twitter;
-var formattedTwitter = HTMLtwitter.replace("%data%", twitter);
-$("#topContacts").append(formattedTwitter);
-
-var _location = bio.contacts.location;
-var formattedLocation = HTMLlocation.replace("%data%", _location);
-$("#topContacts").append(formattedLocation);
-
-var bioPic = bio.bioPic;
-var formattedBioPic = HTMLbioPic.replace("%data%", bioPic);
 $("#header").append(formattedBioPic);
-
-var welcomeMessage = bio.welcomeMessage;
-var formattedWelcomeMessage = HTMLWelcomeMsg.replace("%data%", welcomeMessage);
 $("#header").append(formattedWelcomeMessage);
 
-var skills = bio.skills;
-var formattedSkills = HTMLskills.replace("%data%", skills);
+// special skills variable
 $("#header").append(HTMLskillsStart);
 $("#skills").append(formattedSkills);
+
+// top contacts variable
+$("#topContacts").append(formattedMobile);
+$("#topContacts").append(formattedEmail);
+$("#topContacts").append(formattedGithub);
+$("#topContacts").append(formattedTwitter);
+$("#topContacts").append(formattedLocation);
+
+// Fifty lines of code rewritten
+
+bio.display = function () {
+// rewrite code here
+    var formattedFName = HTMLheaderFName.replace("%data%", bio["first name"].toUpperCase());
+    var formattedLName = HTMLheaderLName.replace("%data%", bio["last name"].toUpperCase());
+    var formattedRole = HTMLheaderRole.replace("%data%", bio.role.toUpperCase());
+    var formattedMobile = HTMLmobile.replace("%data%", bio.contacts["mobile number"]);
+    var formattedEmail = HTMLemail.replace("%data%", bio.contacts["email"]);
+    var formattedGithub = HTMLgithub.replace("%data%", bio.contacts["github username"]);
+    var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts["twitter handle"]);
+    var formattedLocation = HTMLlocation.replace("%data%", bio.contacts["location"]);
+    var formattedBioPic = HTMLbioPic.replace("%data%", bio["bio pic"]);
+    var formattedWelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio["welcome message"]);
+
+    
+    $("#header").prepend(formattedRole);
+    $("#header").prepend(formattedLName);
+    $("#header").prepend(formattedFName);   
+    $("#header").append(formattedWelcomeMsg);
+    $("#topContacts ul").append(formattedMobile);
+    $("#topContacts ul").append(formattedEmail);
+    $("#topContacts ul").append(formattedGithub);
+    $("#topContacts ul").append(formattedTwitter);  
+    $("#topContacts ul").append(formattedLocation);
+
+}
+
 
 
 // education information
@@ -150,8 +192,8 @@ education.display();
 var work = {
     "jobs": [
         {
-            "employer": "Freelance",
-            "title": "Front-End Web Developer",
+            "employer": "James' Company",
+            "title": "Full Stack Web Developer",
             "location": "Taipei, Taiwan",
             "dates": "April 2014 - present",
             "description": "Keep calm and code."
@@ -208,6 +250,11 @@ var projects = {
             "title": "FIFA Matches",
             "dates": "January 2016 - present",
             "description": "Analyzes FIFA Matches"
+        },
+        {
+            "title": "Health Tracker",
+            "dates": "March 2016 - present", 
+            "description": "A Fitness Tracker"
         }
     ]
 };
