@@ -237,38 +237,58 @@ var projects = {
     ]
 };
 
+
+
+// // encapsulation of projects object
+// $("#projects").append(HTMLprojectStart);
+// var test = "Test!";
+// $(".project-entry:last").append(test);
+// console.log(test);
+
+
+
 // appending projects information
 projects.display = function () {
-    var projectsForJordans;
-    for (projectsForJordans in projects.project) {
+// creating projects variable called projectsForSneakers
+    var projectsForSneakers;
+// for in loop for projectsForSneakers iterating through projects.project
+    for (projectsForSneakers in projects.project) {
+// replace data with projects object and store the variable in formattedAbc
+        var formattedTitle = HTMLprojectTitle.replace("%data%", projects.project[projectsForSneakers].title);
+        var formattedDates = HTMLprojectDates.replace("%data%", projects.project[projectsForSneakers].dates);
+        var formattedDescription = HTMLprojectDescription.replace("%data%", projects.project[projectsForSneakers].description);        
+// take the HTML DIV id name and append it to helper.js variable name for the div class
         $("#projects").append(HTMLprojectStart);
-
-        var title1 = HTMLprojectTitle.replace("%data%", projects.project[projectsForJordans].title);
-        var dates1 = HTMLprojectDates.replace("%data%", projects.project[projectsForJordans].dates);
-        var description1 = HTMLprojectDescription.replace("%data%", projects.project[projectsForJordans].description);
-        $(".project-entry:last").append(title1);
-        $(".project-entry:last").append(dates1);
-        $(".project-entry:last").append(description1);
-
+        $(".project-entry:last").append(formattedTitle);
+        $(".project-entry:last").append(formattedDates);
+        $(".project-entry:last").append(formattedDescription);
         // append project images
-        for (Chicago in projects.project[projectsForJordans].images) {
-            var image1 = HTMLprojectImage.replace("%data%", projects.project[projectsForJordans].images[Chicago]);
+        for (Chicago in projects.project[projectsForSneakers].images) {
+            var image1 = HTMLprojectImage.replace("%data%", projects.project[projectsForSneakers].images[Chicago]);
             $(".project-entry:last").append(image1);
         }
-
     }
 };
 
+// encapsulation: Holding the display function inside the property's object. 
 projects.display();
 
 
 
 
 
+// internationalize name buttion/function located at the bottom of the page. 
 
+function inName (name)  {
+    name = name.trim().split(" ");
+    console.log(name);
+    name[1] = name[1].toUpperCase();
+    name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
 
+    return name[0] +" "+name[1];
+}
 
-
+$('#main').append(internationalizeButton);
 
 
 

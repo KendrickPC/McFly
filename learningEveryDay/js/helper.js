@@ -64,6 +64,8 @@ The International Name challenge in Lesson 2 where you'll create a function that
 */
 $(document).ready(function() {
   $('button').click(function() {
+// var name added into code directly below
+    var name = $('#name').html();
     var iName = inName(name) || function(){};
     $('#name').html(iName);  
   });
