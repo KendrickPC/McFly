@@ -34,9 +34,6 @@ var github = bio.contacts.github;
 var twitter = bio.contacts.twitter;
 var _location = bio.contacts.location;
 
-
-
-
 // bio variable
 var formattedName = HTMLheaderName.replace("%data%", name);
 var formattedRole = HTMLheaderRole.replace("%data%", role);
@@ -52,9 +49,6 @@ var formattedEmail = HTMLemail.replace("%data%", email);
 var formattedGithub = HTMLgithub.replace("%data%", github);
 var formattedTwitter = HTMLtwitter.replace("%data%", twitter);
 var formattedLocation = HTMLlocation.replace("%data%", _location);
-
-
-
 
 // bio variable
 $("#header").prepend(formattedRole);
@@ -75,31 +69,55 @@ $("#topContacts").append(formattedLocation);
 
 // Fifty lines of code rewritten
 
-bio.display = function () {
-// rewrite code here
-    var formattedFName = HTMLheaderFName.replace("%data%", bio["first name"].toUpperCase());
-    var formattedLName = HTMLheaderLName.replace("%data%", bio["last name"].toUpperCase());
-    var formattedRole = HTMLheaderRole.replace("%data%", bio.role.toUpperCase());
-    var formattedMobile = HTMLmobile.replace("%data%", bio.contacts["mobile number"]);
-    var formattedEmail = HTMLemail.replace("%data%", bio.contacts["email"]);
-    var formattedGithub = HTMLgithub.replace("%data%", bio.contacts["github username"]);
-    var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts["twitter handle"]);
-    var formattedLocation = HTMLlocation.replace("%data%", bio.contacts["location"]);
-    var formattedBioPic = HTMLbioPic.replace("%data%", bio["bio pic"]);
-    var formattedWelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio["welcome message"]);
 
-    
-    $("#header").prepend(formattedRole);
-    $("#header").prepend(formattedLName);
-    $("#header").prepend(formattedFName);   
-    $("#header").append(formattedWelcomeMsg);
-    $("#topContacts ul").append(formattedMobile);
-    $("#topContacts ul").append(formattedEmail);
-    $("#topContacts ul").append(formattedGithub);
-    $("#topContacts ul").append(formattedTwitter);  
-    $("#topContacts ul").append(formattedLocation);
+// jediMasterTrainer training specialties
 
-}
+var work = {
+    "jobs": [
+        {
+            "employer": "One of James' Random Company",
+            "title": "Full Stack Web Developer",
+            "location": "Taipei, Taiwan",
+            "dates": "April 2014 - present",
+            "description": "Keep calm and code."
+        },
+        {
+            "employer": "Private Financial Consulting Firm",
+            "title": "Junior Analyst",
+            "location": "Menlo Park, CA",
+            "dates": "June 2010 - April 2013",
+            "description": "Keep calm, read, analyze, and summarize."
+        },
+        {
+            "employer": "MSGR",
+            "title": "Legal Researcher",
+            "location": "Palo Alto, CA",
+            "dates": "June 2008 - April 2010",
+            "description": "Keep calm, read, analyze, and summarize."
+        }
+    ]
+};
+
+// appending work information
+work.display = function() {
+    var jediMasterTrainer;
+    for (jediMasterTrainer in work.jobs) {
+        $("#workExperience").append(HTMLworkStart);
+        var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[jediMasterTrainer].employer);
+        var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[jediMasterTrainer].title);
+        var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[jediMasterTrainer].location);
+        var formattedDates = HTMLworkDates.replace("%data%", work.jobs[jediMasterTrainer].dates);
+        var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[jediMasterTrainer].description);
+        $(".work-entry:last").append(formattedEmployer + formattedTitle);
+        $(".work-entry:last").append(formattedLocation);
+        $(".work-entry:last").append(formattedDates);
+        $(".work-entry:last").append(formattedDescription);
+    }
+};
+
+// displays work information
+work.display();
+
 
 
 
@@ -187,52 +205,12 @@ education.display = function () {
 
 education.display();
 
-// work 
 
-var work = {
-    "jobs": [
-        {
-            "employer": "James' Company",
-            "title": "Full Stack Web Developer",
-            "location": "Taipei, Taiwan",
-            "dates": "April 2014 - present",
-            "description": "Keep calm and code."
-        },
-        {
-            "employer": "Private Financial Consulting Firm",
-            "title": "Junior Analyst",
-            "location": "Menlo Park, CA",
-            "dates": "June 2010 - April 2013",
-            "description": "Keep calm, read, analyze, and summarize."
-        },
-        {
-            "employer": "MSGR",
-            "title": "Legal Researcher",
-            "location": "Palo Alto, CA",
-            "dates": "June 2008 - April 2010",
-            "description": "Keep calm, read, analyze, and summarize."
-        }
-    ]
-};
 
-// appending work information
-work.display = function() {
-    var jediMaster;
-    for (jediMaster in work.jobs) {
-        $("#workExperience").append(HTMLworkStart);
-        var employer1 = HTMLworkEmployer.replace("%data%", work.jobs[jediMaster].employer);
-        var title1 = HTMLworkTitle.replace("%data%", work.jobs[jediMaster].title);
-        var location1 = HTMLworkLocation.replace("%data%", work.jobs[jediMaster].location);
-        var dates1 = HTMLworkDates.replace("%data%", work.jobs[jediMaster].dates);
-        var description1 = HTMLworkDescription.replace("%data%", work.jobs[jediMaster].description);
-        $(".work-entry:last").append(employer1 + title1);
-        $(".work-entry:last").append(location1);
-        $(".work-entry:last").append(dates1);
-        $(".work-entry:last").append(description1);
-    }
-};
 
-work.display();
+
+
+// projects section
 
 var projects = {
     "project": [
@@ -282,4 +260,26 @@ projects.display = function () {
 };
 
 projects.display();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
