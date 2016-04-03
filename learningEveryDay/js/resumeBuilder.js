@@ -8,7 +8,7 @@ var bio = {
         "email": "McFly@netscape.com",
         "github": "McFly",
         "twitter": "@McFly",
-        "location": "Hill Valley, California"
+        "location": "Hollywood, California"
     },
     "welcomeMessage": "Just trying to go home.",
     "skills": [
@@ -217,22 +217,26 @@ var projects = {
         {
             "title": "Neighborhood Map",
             "dates": "February 2016 - present",
-            "description": "Neighborhood map project"
+            "description": "Neighborhood map project",
+            "images": ["images/ACC-Alvin.jpg"]
         },
         {
             "title": "Arcade Game",
             "dates": "January 2016 - present",
-            "description": "Arcade game project"
+            "description": "Arcade game project",
+            // "images": ["images/ACC-Alvin.jpg"]
         },
         {
             "title": "FIFA Matches",
             "dates": "January 2016 - present",
-            "description": "Analyzes FIFA Matches"
+            "description": "Analyzes FIFA Matches",
+            "images": ["images/ACC-Alvin.jpg"]
         },
         {
             "title": "Health Tracker",
             "dates": "March 2016 - present", 
-            "description": "A Fitness Tracker"
+            "description": "A Fitness Tracker",
+            "images": ["images/ACC-Alvin.jpg"]
         }
     ]
 };
